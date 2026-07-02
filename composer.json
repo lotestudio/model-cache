@@ -1,0 +1,38 @@
+{
+  "name": "lotestudio/model-cache",
+  "description": "Model cache package for Laravel",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "LoteStudio",
+      "email": "info@lote.bg"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/support": "^9.0|^10.0|^11.0|^12.0|^13.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.0|^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lotestudio\\ModelCache\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lotestudio\\ModelCache\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Lotestudio\\ModelCache\\ModelCacheServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
