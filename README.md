@@ -1,5 +1,7 @@
 # Laravel Model Cache
 
+## Under development! Use at your own risk!
+
 A lightweight, convention-driven caching layer for Laravel Eloquent models. Automatically caches model query results with observer-based invalidation, request-level caching, and Artisan commands for management.
 
 ## Features
@@ -20,14 +22,14 @@ A lightweight, convention-driven caching layer for Laravel Eloquent models. Auto
 
 ## Installation
 
-The package is located at `app/Lote/ModelCache` and is auto-discovered via Laravel's service provider registration.
+The package is located at `Lotestudio/ModelCache` and is auto-discovered via Laravel's service provider registration.
 
 ### Service Provider
 
 Register the service provider in `bootstrap/providers.php` (Laravel 12) or `config/app.php`:
 
 ```php
-App\Lote\ModelCache\ModelCacheServiceProvider::class,
+Lotestudio\ModelCache\ModelCacheServiceProvider::class,
 ```
 
 ### Facade (Optional)
@@ -35,7 +37,7 @@ App\Lote\ModelCache\ModelCacheServiceProvider::class,
 Add to the `aliases` array in `config/app.php`:
 
 ```php
-'ModelCache' => App\Lote\ModelCache\Facades\ModelCache::class,
+'ModelCache' => Lotestudio\ModelCache\Facades\ModelCache::class,
 ```
 
 ## Configuration
@@ -98,7 +100,7 @@ return [
 ### Basic Usage
 
 ```php
-use App\Lote\ModelCache\Facades\ModelCache;
+use Lotestudio\ModelCache\Facades\ModelCache;
 
 // Get all cached stores
 $stores = ModelCache::all('stores');
@@ -187,7 +189,7 @@ model_cache_register('products', [
 ### Using the Interface (Dependency Injection)
 
 ```php
-use App\Lote\ModelCache\Contracts\ModelCacheInterface;
+use Lotestudio\ModelCache\Contracts\ModelCacheInterface;
 
 class StoreController
 {
@@ -250,7 +252,7 @@ The service provider checks for a custom observer at `App\Observers\{ModelName}O
 ## Architecture
 
 ```
-app/Lote/ModelCache/
+Lotestudio/ModelCache/
 ├── Commands/
 │   ├── CacheClearCommand.php      # php artisan model-cache:clear
 │   ├── CacheStatsCommand.php      # php artisan model-cache:stats
