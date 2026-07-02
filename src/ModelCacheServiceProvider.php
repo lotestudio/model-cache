@@ -52,14 +52,14 @@ class ModelCacheServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Publish configuration
-//        $this->publishes([
-//            __DIR__ . '/../config/model-cache.php' => config_path('model-cache.php'),
-//        ], 'model-cache-config');
+        $this->publishes([
+            __DIR__ . '/../config/model-cache.php' => config_path('model-cache.php'),
+        ], 'model-cache-config');
 
         // Publish observers (optional)
-//        $this->publishes([
-//            __DIR__ . '/Observers' => app_path('Observers'),
-//        ], 'model-cache-observers');
+        $this->publishes([
+            __DIR__ . '/Observers' => app_path('Observers'),
+        ], 'model-cache-observers');
 
         // Register model observers if auto_clear is enabled
         if (config('model-cache.auto_clear', true)) {
