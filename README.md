@@ -42,16 +42,16 @@ Add to the `aliases` array in `config/app.php`:
 
 ## Configuration
 
-[//]: # (Publish the configuration file:)
+Publish the configuration file:
 
-[//]: # ()
-[//]: # (```bash)
 
-[//]: # (php artisan vendor:publish --tag=model-cache-config)
+```bash
 
-[//]: # (```)
+php artisan vendor:publish --provider="Lotestudio\ModelCache\ModelCacheServiceProvider" --tag="model-cache-config"
 
-Or configure directly in `config/model-cache.php`:
+```
+
+
 
 ```php
 return [
