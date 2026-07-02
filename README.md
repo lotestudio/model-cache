@@ -4,6 +4,19 @@
 
 A lightweight, convention-driven caching layer for Laravel Eloquent models. Automatically caches model query results with observer-based invalidation, request-level caching, and Artisan commands for management.
 
+Designed to cache frequently accessed reference data like stores, price lists, categories, and roles. It's ideal for small datasets (under 50 records) that are read often but change rarely, dramatically reducing database queries and improving response times from ~5-10ms to under 1ms.
+
+Use it when: you have lookup tables, reference data, or configuration-like models that are loaded on almost every request and don't change frequently.
+
+Avoid it when: you're dealing with large tables (>100 records), frequently changing data, real-time requirements, or models with heavy JSON fields that consume significant memory.
+
+Best for: Stores, price lists, categories, statuses, roles, and other "dictionary" tables that power your application's dropdowns, filters, and navigation.
+
+Not suitable for: Orders, users, logs, products (if large), or any data that requires up-to-the-second accuracy.
+
+The package includes automatic cache clearing via observers, request-level caching, Artisan commands, and full Eloquent model support — everything stays cached while maintaining Laravel's native behavior.
+
+
 ## Features
 
 - **Automatic Caching** — Cache model query results with configurable TTL and cache driver
